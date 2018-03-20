@@ -75,32 +75,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
 
-        mMap.setOnMarkerDragListener(new GoogleMap.OnMarkerDragListener() {
-            @Override
-            public void onMarkerDragStart(Marker marker) {
-                marker.setDraggable(true);
-            }
-
-            @Override
-            public void onMarkerDrag(Marker marker) {
-                mMap.addMarker(new MarkerOptions().position(marker.getPosition()));
-            }
-
-            @Override
-            public void onMarkerDragEnd(Marker marker) {
-                mMap.addMarker(new MarkerOptions().position(marker.getPosition()).title("New Position"));
-            }
-        });
-
-        /*mMap.setOnMyLocationButtonClickListener(new GoogleMap.OnMyLocationButtonClickListener() {
+        mMap.setOnMyLocationButtonClickListener(new GoogleMap.OnMyLocationButtonClickListener() {
             @Override
             public boolean onMyLocationButtonClick() {
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(
                         new LatLng(mMap.getMyLocation().getLatitude(),
-                        mMap.getMyLocation().getLongitude()), 17));
+                        mMap.getMyLocation().getLongitude()), 18));
                 return true;
             }
-        });*/
+        });
 //        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
     }
 
